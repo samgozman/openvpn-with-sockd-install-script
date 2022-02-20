@@ -16,3 +16,15 @@ bash install.sh --port=2016 --version=1.4.3
 # service sockd deluser
 
 cd ..
+
+# Install open vpn
+mkdir openvpn
+cd openvpn || exit
+
+curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
+chmod +x openvpn-install.sh
+
+AUTO_INSTALL=y DNS=3 ./openvpn-install.sh
+
+# To add or revoke users just run:
+# ./openvpn-install.sh
